@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/favicon.png" type="image/x-icon">
+        <title>Download | Trans-Fi- Easy File Sharing</title>
+        <link rel ="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <img src="/img/transfi-logo.png" alt="Trans-Fi Logo" class="logo">
+        </div>
+
+        <div class="main">
+            <section class="download">
+                <img src="/img/download.svg" alt="Download Icon" class="download__icon">
+                <% if(locals.error) { %>
+                    <h4><%= locals.error %></h4>
+                <% } else { %>
+                    <h2>Your file is ready to download</h2>
+                    <p>Link exprires in 24 hours</p>
+                    <div class="download__meta">
+                        <h4><%= filename %></h4>
+                        <small><%= parseInt(size / 1024) %> KB</small>
+                    </div>
+                    <div class="send-btn-container">
+                        <a href="<%= download_url %>">Download file</a>
+                    </div>
+                <% } %>
+            </section>
+        </div>
+    </body>
+</html>
