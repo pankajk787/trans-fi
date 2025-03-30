@@ -32,4 +32,6 @@ const deleteData = async () => {
     }
 }
 
-deleteData().then(process.exit)
+// deleteData().then(process.exit)
+
+module.exports = deleteData;

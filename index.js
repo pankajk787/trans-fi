@@ -5,10 +5,10 @@ const connectDB = require("./config/db");
 const filesRouter = require("./routes/files");
 const showRouter = require("./routes/show");
 const downloadRouter = require("./routes/download");
+const cron = require("node-cron");
+const deleteData = require("./cron-job");
 
 const app = express();
-
-app.use(express.json());
 
 connectDB();
 
@@ -21,6 +21,12 @@ app.use(express.static(path.join(__dirname, "public")));
 // Template engine
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
+
+// Cron job
+cron.schedule("38 23 * * *", () => {
+  console.log("Running cron job to delete expired files...", new Date().toLocaleString());
+  deleteData();
+});
 
 // Routes
 app.use("/api/files", filesRouter);
