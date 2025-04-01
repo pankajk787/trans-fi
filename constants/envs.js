@@ -6,6 +6,7 @@ const SMTP_HOST = process.env.SMTP_HOST;
 const SMTP_PORT = process.env.SMTP_PORT;
 const MAIL_USER = process.env.MAIL_USER;
 const MAIL_PASS = process.env.MAIL_PASS;
+const WHITELIST = [process.env.FRONTEND_URL];
 
 module.exports = {
     PORT,
@@ -14,4 +15,5 @@ module.exports = {
     SMTP_PORT,
     MAIL_USER,
     MAIL_PASS,
+    WHITELIST
 }

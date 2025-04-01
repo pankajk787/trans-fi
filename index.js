@@ -1,17 +1,32 @@
 const express = require("express");
 const path = require("node:path");
-const { PORT } = require("./constants/envs");
+const { PORT, WHITELIST } = require("./constants/envs");
 const connectDB = require("./config/db");
 const filesRouter = require("./routes/files");
 const showRouter = require("./routes/show");
 const downloadRouter = require("./routes/download");
 const cron = require("node-cron");
 const deleteData = require("./cron-job");
+const cors = require("cors");
 
 const app = express();
 
 connectDB();
 
+const whitelist = [process.env.FRONTEND_URL];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || WHITELIST.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
