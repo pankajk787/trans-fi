@@ -40,6 +40,7 @@ app.set("view engine", "ejs");
 // Cron job
 cron.schedule("38 23 * * *", () => {
   console.log("Running cron job to delete expired files...", new Date().toLocaleString());
+  console.log("********* Cron job started ***********");
   deleteData();
 });
 

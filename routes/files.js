@@ -51,7 +51,6 @@ router.post('/', (req, res) => {
 
 router.post('/send', async (req, res) => {
     const { uuid, email_from, email_to } = req.body;
-    console.log("line 54", { uuid, email_from, email_to });
     if(!uuid || !email_from || !email_to) {
         return res.status(400).json({ message: 'All fields are required' });
     }

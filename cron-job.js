@@ -30,6 +30,9 @@ const deleteData = async () => {
     } catch(error) {
         console.error("Error deleting expired files: ", error);
     }
+    finally {
+        console.log("********* Cron job completed ***********");
+    }
 }
 
 // deleteData().then(process.exit)

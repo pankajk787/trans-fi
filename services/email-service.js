@@ -11,7 +11,6 @@ async function sendMail({ from, to, subject, text, html }) {
         }
     });
 
-    console.log("Sending email...", { SMTP_HOST, SMTP_PORT, MAIL_USER, MAIL_PASS });
     const info = await transporter.sendMail({
         from: `Trans-Fi <${from}>`,
         to,
