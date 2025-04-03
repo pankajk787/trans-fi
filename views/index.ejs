@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <%- include('partials/common', { title: 'Trans-Fi | Easy File Sharing', stylePath: '/css/index-style.css' }) %>
+    <main class="main">
+        <section class="left-main">
+            <div class="download-card">
+                <div class="drop-zone">
+                    <div class="icon-container">
+                        <img src="/img/file.svg" alt="Upload Icon" class="file-icon left" draggable="false">
+                        <img src="/img/file.svg" alt="Upload Icon" class="file-icon center" draggable="false">
+                        <img src="/img/file.svg" alt="Upload Icon" class="file-icon right" draggable="false">
+                    </div>
+                    <input type="file" id="file-input" accept="*/*">
+                    <div class="title">Drop your file here or <button class="upload-btn">Browse</button></div>
+                </div>
+                <div class="progress-container">
+                    <div class="bg-progress"></div>
+                    <div class="progres-details-container">
+                        <div class="title">Uploading...</div>
+                        <p class="progress-percent">0%</p>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sharing-container">
+                    <p class="expire">Link expires in 2 hours</p>
+                    <div class="input-container">
+                        <input type="text" id="file-url" readonly />
+                        <button class="copy-btn"><img src="/img/copy.svg" alt="Copy" draggable="false"/></button>
+                    </div>
+                    <p class="divider">OR</p>
+                    <div class="email-container">
+                        <p class="divider">Send Link via Email</p>
+                        <form id="email-form">
+                            <div class="field">
+                                <label for="email_from">Your Email:</label>
+                                <input type="email" name="email_from" id="email_from" required>
+                            </div>
+                            <div class="field">
+                                <label for="email_to">Recipient's Email:</label>
+                                <input type="email" name="email_to" id="email_to" required>
+                            </div>
+                            <button class="send-btn">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="right-main hero">
+            <div class="hero-content">
+                <img src="/img/undraw-upload.svg" alt="Hero Image" class="hero-image" draggable="false">
+            </div>
+        </div>
+    </main>
+    <div class="toast">This is a toast</div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

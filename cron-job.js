@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const deleteData = async () => {
     try{
         await connectDB();
-        const pastDate = new Date(Date.now() - 24 * 60 * 60 * 1000); // 24 hours ago
+        const pastDate = new Date(Date.now() - 2 * 60 * 60 * 1000); // 2 hours ago
 
         const files = await File.find({ createdAt: { $lt: pastDate } });
         console.log(`Found ${files.length} expired files.`);
