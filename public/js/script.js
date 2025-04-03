@@ -15,7 +15,6 @@
     const apiDomain = '';
 
     dropZone.addEventListener('dragover', (e) => {
-        console.log("dragover::::", e.dataTransfer.files?.length)
         e.preventDefault()
         if(!dropZone.classList.contains('dragged')) {
             dropZone.classList.add('dragged')
@@ -105,7 +104,6 @@
     const copyContent = (content) => {
         navigator.clipboard.writeText(content);
         showToast("Copied to clipboard!", "info");
-        console.log("Copied to clipboard: ", content);
     }
 
     emailForm.addEventListener('submit', (e) => {
@@ -123,11 +121,9 @@
             body: JSON.stringify({ email_from, email_to, uuid })
         }).then(res => res.json())
         .then(data => {
-            console.log("Response: ", data);
             if(data.success) {
                 sharingContainer.style.display = 'none';
                 showToast("Email sent successfully!", "info");
-                console.log("Email sent successfully: ", data);
             }
             else {
                 console.error("Error in sending email: ", data);
