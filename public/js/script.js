@@ -11,7 +11,8 @@
     const fileUrlInput = sharingContainer.querySelector('#file-url');
     const emailForm = document.querySelector('#email-form');
 
-    const apiDomain = 'http://localhost:5000';
+    // const apiDomain = 'http://localhost:5000';
+    const apiDomain = '';
 
     dropZone.addEventListener('dragover', (e) => {
         console.log("dragover::::", e.dataTransfer.files?.length)
