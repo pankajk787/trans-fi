@@ -53,10 +53,15 @@
 
 
     const uploadFile = () => {
-        progressContainer.style.display = 'flex';
-
         const formData = new FormData();
         const file = fileInput.files[0];
+
+        if(file.size > 100 * 1024 * 1024) {
+            return showToast("File size exceeds 100 MB", "error");
+        }
+
+        progressContainer.style.display = 'flex';
+
         formData.append('myfile', file);
 
         const xhr = new XMLHttpRequest();
@@ -66,9 +71,11 @@
                 if(xhr.status === 200) {
                     const response = JSON.parse(xhr.response);
                     onUploadSuccess(response.file);
+                    progressContainer.style.display = 'none';
                 }
                 else {
                     console.error("Error in uploading file, Failed with status: ", xhr.status);
+                    progressContainer.style.display = 'none';
                 }
             }
         }
@@ -77,6 +84,7 @@
 
         xhr.onerror = () => {
             console.error("Error in uploading file, Failed with status: ", xhr.status);
+            progressContainer.style.display = 'none';
         }
 
         xhr.open('POST', `${apiDomain}/api/files`);
