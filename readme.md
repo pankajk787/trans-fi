@@ -17,4 +17,6 @@ Trans-Fi is an easy-to-use file-sharing application built with the MERN stack. I
 
 ![Image](https://github.com/user-attachments/assets/773d4e72-e277-450b-b266-c2dee7453912)
 
-![Image](https://github.com/user-attachments/assets/ee6edfd4-3cbf-420b-8e8d-5e2a30072c44) ![Image](https://github.com/user-attachments/assets/c64004e7-1d9b-4960-9cee-2e53a8ec4121) ![Image](https://github.com/user-attachments/assets/2a94466e-bb42-48b7-ac01-130d5ac45079)
+![Image](https://github.com/user-attachments/assets/c64004e7-1d9b-4960-9cee-2e53a8ec4121) ![Image](https://github.com/user-attachments/assets/2a94466e-bb42-48b7-ac01-130d5ac45079)
+
+![Image](https://github.com/user-attachments/assets/ee6edfd4-3cbf-420b-8e8d-5e2a30072c44)
